@@ -11,7 +11,10 @@ PHP + さくらVPS で稼働中の [元システム](https://github.com/daisuke8
 
 ```bash
 $ brew install go@1.18
+$ cp .env.example .env
 ```
+[LINE Developersコンソール](https://developers.line.biz/ja/docs/messaging-api/building-bot/#set-up-bot-on-line-developers-console) でボットを設定する
+LINE Developersコンソール から LINE_BOT_CHANNEL_SECRET と LINE_BOT_CHANNEL_TOKEN を調べて、.env に 設定する
 
 ## How to use on local
 
@@ -19,9 +22,10 @@ $ brew install go@1.18
 
 - ブログ内容のスクレイピング
 ```bash
-$ go run scrape.go
+$ go run main.go line_notify.go scrape.go scrap 
 ```
 
 - LinePush 通知
-TODO
-
+```bash
+$ go run main.go line_notify.go scrape.go line 
+```
