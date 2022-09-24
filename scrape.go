@@ -12,7 +12,7 @@ type Blog struct {
 	title, content string
 }
 
-func main() {
+func scrape() {
 	blogs := ScrapeJDSBlog()
 	for _, blog := range blogs {
 		fmt.Printf("title:%s, content:%s", blog.title, blog.content)
